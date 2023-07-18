@@ -58,3 +58,7 @@ li{
     font-size:16px;
     top:-24px;
 }
+
+li::first-letter{
+    text-transform:capitalize;
+}
