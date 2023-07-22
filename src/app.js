@@ -16,8 +16,8 @@ function formatDate(timestamp) {
 
 function displayForecast(response) {
     console.log(response.data.daily);
-    let forecastElement = document.querySelector("#forecast");
 
+    let forecastElement = document.querySelector("#forecast");
     let days = ["Thur", "Fri", "Sat", "Sun"];
     let forecastHtml = `<div class = "row">`;
     days.forEach(function (day) {
@@ -48,7 +48,7 @@ function getForecast(coordinates) {
     console.log(coordinates);
 
     let apiKey = "50c2acd53349fabd54f52b93c8650d37";
-    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid={apikey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(displayForecast);
 }
